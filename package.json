@@ -4,6 +4,7 @@
   "private": true,
   "description": "Personal portfolio website",
   "scripts": {
+    "dev": "http-server . -p 8081 -c-1",
     "start": "http-server . -p 8081 -c-1"
   },
   "devDependencies": {
