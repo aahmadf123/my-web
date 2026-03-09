@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [   
         {
-            "type": "pwa-chrome",
+            "type": "chrome",
             "request": "launch",
-            "name": "Open Portfolio (localhost:8080)",
-            "url": "http://localhost:8080",
+            "name": "Open Portfolio (localhost:8081)",
+            "url": "http://localhost:8081",
             "webRoot": "${workspaceFolder}"
         }
     ]
