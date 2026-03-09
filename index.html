@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to My World</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- XP Bar & Level Display -->
+  <div id="xp-bar-container">
+    <div id="level-badge">LVL <span id="level-num">1</span></div>
+    <div id="xp-bar">
+      <div id="xp-fill"></div>
+    </div>
+    <span id="xp-text">0 / 100 XP</span>
+  </div>
+
+  <!-- Achievement Toast -->
+  <div id="achievement-toast" class="hidden">
+    <span id="achievement-icon">&#127942;</span>
+    <div>
+      <strong id="achievement-title">Achievement Unlocked!</strong>
+      <p id="achievement-desc"></p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-logo">&#9670; PORTFOLIO</div>
+    <ul class="nav-links">
+      <li><a href="#hero" data-section="hero">Home</a></li>
+      <li><a href="#about" data-section="about">About</a></li>
+      <li><a href="#skills" data-section="skills">Skills</a></li>
+      <li><a href="#projects" data-section="projects">Projects</a></li>
+      <li><a href="#contact" data-section="contact">Contact</a></li>
+    </ul>
+    <div id="combo-counter" class="hidden">
+      <span id="combo-num">0</span>x COMBO
+    </div>
+  </nav>
+
+  <!-- Cursor Trail Canvas -->
+  <canvas id="cursor-canvas"></canvas>
+
+  <!-- Particle Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ===== SECTION 1: HERO ===== -->
+  <section id="hero" class="section" data-xp="10">
+    <div class="hero-content">
+      <div class="glitch-wrapper">
+        <h1 class="glitch" data-text="Hello, World.">Hello, World.</h1>
+      </div>
+      <p class="hero-subtitle typewriter">I build things for the web.</p>
+      <div class="hero-cta">
+        <a href="#about" class="btn btn-primary pulse-btn">Begin the Journey</a>
+        <a href="#projects" class="btn btn-outline">View Projects</a>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <p>Scroll to explore & earn XP</p>
+      </div>
+    </div>
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: ABOUT ===== -->
+  <section id="about" class="section" data-xp="15">
+    <div class="section-container">
+      <h2 class="section-title reveal-up">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <p class="lead">I'm a passionate developer who loves crafting beautiful, performant digital experiences.</p>
+          <p>With a deep love for clean code and creative problem-solving, I transform ideas into reality. Every project is an adventure, every bug is a puzzle to solve, and every deployment is a victory.</p>
+          <div class="stats-row">
+            <div class="stat-card clickable-card" data-xp="5">
+              <span class="stat-number counter" data-target="50">0</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-card clickable-card" data-xp="5">
+              <span class="stat-number counter" data-target="5">0</span>
+              <span class="stat-label">Years Exp</span>
+            </div>
+            <div class="stat-card clickable-card" data-xp="5">
+              <span class="stat-number counter" data-target="1000">0</span>
+              <span class="stat-label">Commits</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="avatar-container">
+            <div class="avatar-ring"></div>
+            <div class="avatar-placeholder">
+              <span>&#128640;</span>
+            </div>
+          </div>
+          <div class="floating-badges">
+            <span class="badge badge-1">Creative</span>
+            <span class="badge badge-2">Curious</span>
+            <span class="badge badge-3">Driven</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: SKILLS ===== -->
+  <section id="skills" class="section" data-xp="20">
+    <div class="section-container">
+      <h2 class="section-title reveal-up">Skill Tree</h2>
+      <p class="section-subtitle reveal-up">Click skills to level them up!</p>
+      <div class="skills-grid">
+        <div class="skill-node clickable-card" data-skill="html" data-xp="3">
+          <div class="skill-icon">&#9001;/&#9002;</div>
+          <div class="skill-name">HTML5</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+          <div class="skill-level">Lv. <span>1</span></div>
+        </div>
+        <div class="skill-node clickable-card" data-skill="css" data-xp="3">
+          <div class="skill-icon">&#127912;</div>
+          <div class="skill-name">CSS3</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+          <div class="skill-level">Lv. <span>1</span></div>
+        </div>
+        <div class="skill-node clickable-card" data-skill="js" data-xp="3">
+          <div class="skill-icon">&#9889;</div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+          <div class="skill-level">Lv. <span>1</span></div>
+        </div>
+        <div class="skill-node clickable-card" data-skill="react" data-xp="3">
+          <div class="skill-icon">&#9883;</div>
+          <div class="skill-name">React</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+          <div class="skill-level">Lv. <span>1</span></div>
+        </div>
+        <div class="skill-node clickable-card" data-skill="node" data-xp="3">
+          <div class="skill-icon">&#9881;</div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+          <div class="skill-level">Lv. <span>1</span></div>
+        </div>
+        <div class="skill-node clickable-card" data-skill="python" data-xp="3">
+          <div class="skill-icon">&#128013;</div>
+          <div class="skill-name">Python</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+          <div class="skill-level">Lv. <span>1</span></div>
+        </div>
+        <div class="skill-node clickable-card" data-skill="git" data-xp="3">
+          <div class="skill-icon">&#128202;</div>
+          <div class="skill-name">Git</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="92"></div></div>
+          <div class="skill-level">Lv. <span>1</span></div>
+        </div>
+        <div class="skill-node clickable-card" data-skill="design" data-xp="3">
+          <div class="skill-icon">&#9998;</div>
+          <div class="skill-name">UI/UX</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
+          <div class="skill-level">Lv. <span>1</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: PROJECTS ===== -->
+  <section id="projects" class="section" data-xp="25">
+    <div class="section-container">
+      <h2 class="section-title reveal-up">Quest Log</h2>
+      <p class="section-subtitle reveal-up">Completed missions & side-quests</p>
+      <div class="projects-grid">
+        <div class="project-card reveal-up clickable-card" data-xp="5">
+          <div class="project-status">&#9989; COMPLETED</div>
+          <div class="project-image">
+            <div class="project-placeholder">&#128187;</div>
+          </div>
+          <div class="project-info">
+            <h3>E-Commerce Platform</h3>
+            <p>Full-stack shopping experience with real-time inventory and payment integration.</p>
+            <div class="project-tech">
+              <span>React</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+            <div class="project-xp-reward">+50 XP</div>
+          </div>
+        </div>
+        <div class="project-card reveal-up clickable-card" data-xp="5">
+          <div class="project-status">&#9989; COMPLETED</div>
+          <div class="project-image">
+            <div class="project-placeholder">&#128202;</div>
+          </div>
+          <div class="project-info">
+            <h3>Analytics Dashboard</h3>
+            <p>Real-time data visualization dashboard with interactive charts and filters.</p>
+            <div class="project-tech">
+              <span>Vue.js</span><span>D3.js</span><span>Firebase</span>
+            </div>
+            <div class="project-xp-reward">+75 XP</div>
+          </div>
+        </div>
+        <div class="project-card reveal-up clickable-card" data-xp="5">
+          <div class="project-status">&#128296; IN PROGRESS</div>
+          <div class="project-image">
+            <div class="project-placeholder">&#129302;</div>
+          </div>
+          <div class="project-info">
+            <h3>AI Chat Assistant</h3>
+            <p>Intelligent conversational AI powered by machine learning models.</p>
+            <div class="project-tech">
+              <span>Python</span><span>TensorFlow</span><span>FastAPI</span>
+            </div>
+            <div class="project-xp-reward">+100 XP</div>
+          </div>
+        </div>
+        <div class="project-card reveal-up clickable-card" data-xp="5">
+          <div class="project-status">&#128296; IN PROGRESS</div>
+          <div class="project-image">
+            <div class="project-placeholder">&#127918;</div>
+          </div>
+          <div class="project-info">
+            <h3>Game Engine</h3>
+            <p>A lightweight 2D game engine built from scratch with WebGL rendering.</p>
+            <div class="project-tech">
+              <span>TypeScript</span><span>WebGL</span><span>WASM</span>
+            </div>
+            <div class="project-xp-reward">+150 XP</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5: CONTACT ===== -->
+  <section id="contact" class="section" data-xp="15">
+    <div class="section-container">
+      <h2 class="section-title reveal-up">Send a Message</h2>
+      <p class="section-subtitle reveal-up">Drop a quest request or just say hello!</p>
+      <div class="contact-wrapper reveal-up">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Your Email" required>
+            <label for="email">Your Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">
+            <span>Send Message</span>
+            <span class="btn-xp">+25 XP</span>
+          </button>
+        </form>
+        <div class="contact-links">
+          <a href="#" class="social-link clickable-card" data-xp="2">GitHub</a>
+          <a href="#" class="social-link clickable-card" data-xp="2">LinkedIn</a>
+          <a href="#" class="social-link clickable-card" data-xp="2">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Built with <span class="heart">&#9829;</span> and lots of coffee</p>
+    <p class="footer-stats">Total XP earned this session: <span id="footer-xp">0</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
