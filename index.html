@@ -8,24 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- XP Bar & Level Display -->
-  <div id="xp-bar-container">
-    <div id="level-badge">LVL <span id="level-num">1</span></div>
-    <div id="xp-bar">
-      <div id="xp-fill"></div>
-    </div>
-    <span id="xp-text">0 / 100 XP</span>
-  </div>
-
-  <!-- Achievement Toast -->
-  <div id="achievement-toast" class="hidden">
-    <span id="achievement-icon">&#127942;</span>
-    <div>
-      <strong id="achievement-title">Achievement Unlocked!</strong>
-      <p id="achievement-desc"></p>
-    </div>
-  </div>
-
   <!-- Scroll Progress -->
   <div id="scroll-progress"></div>
 
@@ -35,37 +17,35 @@
     <ul class="nav-links">
       <li><a href="#hero" data-section="hero">Home</a></li>
       <li><a href="#about" data-section="about">About</a></li>
-      <li><a href="#skills" data-section="skills">Skills</a></li>
+      <li><a href="#experience" data-section="experience">Experience</a></li>
       <li><a href="#projects" data-section="projects">Projects</a></li>
+      <li><a href="#research" data-section="research">Research</a></li>
+      <li><a href="#skills" data-section="skills">Skills</a></li>
       <li><a href="#contact" data-section="contact">Contact</a></li>
     </ul>
-    <div id="combo-counter" class="hidden">
-      <span id="combo-num">0</span>x COMBO
-    </div>
+    <a href="resume.pdf" download class="btn btn-primary nav-resume-btn">Resume</a>
   </nav>
-
-  <!-- Cursor Trail Canvas -->
-  <canvas id="cursor-canvas"></canvas>
 
   <!-- Particle Background Canvas -->
   <canvas id="particle-canvas"></canvas>
 
   <!-- ===== SECTION 1: HERO ===== -->
-  <section id="hero" class="section" data-xp="10">
+  <section id="hero" class="section">
     <div class="hero-content">
       <div class="glitch-wrapper">
         <h1 class="glitch" data-text="Ahmad Firas.">Ahmad Firas.</h1>
       </div>
       <p class="hero-subtitle typewriter">I build AI systems &amp; data pipelines.</p>
       <div class="hero-cta">
-        <a href="#about" class="btn btn-primary pulse-btn">Begin the Journey</a>
+        <a href="#about" class="btn btn-primary pulse-btn">View My Work</a>
         <a href="#projects" class="btn btn-outline">View Projects</a>
+        <a href="resume.pdf" download class="btn btn-outline">&#8595; Resume</a>
       </div>
       <div class="scroll-indicator">
         <div class="mouse">
           <div class="wheel"></div>
         </div>
-        <p>Scroll to explore &amp; earn XP</p>
+        <p>Scroll to explore</p>
       </div>
     </div>
     <div class="hero-shapes">
@@ -77,7 +57,7 @@
   </section>
 
   <!-- ===== SECTION 2: ABOUT ===== -->
-  <section id="about" class="section" data-xp="15">
+  <section id="about" class="section">
     <div class="section-container">
       <h2 class="section-title reveal-up">About Me</h2>
       <div class="about-grid">
@@ -85,15 +65,15 @@
           <p class="lead">CS &amp; Engineering student at the University of Toledo, graduating May 2026 — building at the intersection of AI, data engineering, and autonomous systems.</p>
           <p>Currently a Microsoft Solution Developer at First Solar, architecting agentic AI workflows with Copilot Studio and Azure AI. Simultaneously doing sports analytics at UT Athletics and UAV AI research — and wrapping up an ACM Computing Surveys paper on autonomous AI failures. I care about systems that actually work in production.</p>
           <div class="stats-row">
-            <div class="stat-card clickable-card" data-xp="5">
+            <div class="stat-card">
               <span class="stat-number counter" data-target="3">0</span>
               <span class="stat-label">Internships</span>
             </div>
-            <div class="stat-card clickable-card" data-xp="5">
+            <div class="stat-card">
               <span class="stat-number counter" data-target="74">0</span>
               <span class="stat-label">Research Sources</span>
             </div>
-            <div class="stat-card clickable-card" data-xp="5">
+            <div class="stat-card">
               <span class="stat-number counter" data-target="976">0</span>
               <span class="stat-label">R² × 1000</span>
             </div>
@@ -116,72 +96,131 @@
     </div>
   </section>
 
-  <!-- ===== SECTION 3: SKILLS ===== -->
-  <section id="skills" class="section" data-xp="20">
+  <!-- ===== SECTION: EXPERIENCE ===== -->
+  <section id="experience" class="section">
     <div class="section-container">
-      <h2 class="section-title reveal-up">Skill Tree</h2>
-      <p class="section-subtitle reveal-up">Click skills to level them up!</p>
-      <div class="skills-grid">
-        <div class="skill-node clickable-card" data-skill="python" data-xp="3">
-          <div class="skill-icon">&#128013;</div>
-          <div class="skill-name">Python</div>
-          <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
-          <div class="skill-level">Lv. <span>1</span></div>
+      <h2 class="section-title reveal-up">Experience</h2>
+      <p class="section-subtitle reveal-up">Where I've built and shipped</p>
+      <div class="timeline">
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Microsoft Solution Developer</h3>
+                <p class="timeline-company">First Solar — Toledo, OH</p>
+              </div>
+              <span class="timeline-date">Jan 2025 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Architecting agentic AI workflows using Copilot Studio and Azure AI to automate internal business processes</li>
+              <li>Building and deploying Power Platform solutions integrated with Azure services for enterprise-scale usage</li>
+              <li>Collaborating with cross-functional teams to identify automation opportunities and deliver production-ready AI systems</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Azure AI</span><span>Copilot Studio</span><span>Power Platform</span><span>Microsoft 365</span>
+            </div>
+          </div>
         </div>
-        <div class="skill-node clickable-card" data-skill="ml" data-xp="3">
-          <div class="skill-icon">&#129504;</div>
-          <div class="skill-name">ML / AI</div>
-          <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
-          <div class="skill-level">Lv. <span>1</span></div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Sports Analytics Developer</h3>
+                <p class="timeline-company">University of Toledo Athletics — Toledo, OH</p>
+              </div>
+              <span class="timeline-date">Aug 2024 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Building ML-powered statistical models for roster efficiency scoring and athlete benefit allocation</li>
+              <li>Designing interactive DOMO dashboards translating performance metrics into actionable insights for coaches and athletic directors</li>
+              <li>Automating data pipelines from raw game data to decision-ready visualizations</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Python</span><span>scikit-learn</span><span>DOMO</span><span>Beast Mode</span>
+            </div>
+          </div>
         </div>
-        <div class="skill-node clickable-card" data-skill="sql" data-xp="3">
-          <div class="skill-icon">&#128202;</div>
-          <div class="skill-name">SQL &amp; Databases</div>
-          <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
-          <div class="skill-level">Lv. <span>1</span></div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">UAV AI Researcher</h3>
+                <p class="timeline-company">University of Toledo — Toledo, OH</p>
+              </div>
+              <span class="timeline-date">May 2024 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Developing the Deep Flyer autonomous UAV training platform inspired by AWS DeepRacer</li>
+              <li>Implementing P3O reinforcement learning and YOLO11 stereo vision for obstacle avoidance</li>
+              <li>Achieving 72.8% zero-shot deployment success via MAML across 1,000+ simulated environments on NVIDIA Jetson</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>PyTorch</span><span>ROS 2</span><span>MAML</span><span>YOLO11</span><span>NVIDIA Jetson</span>
+            </div>
+          </div>
         </div>
-        <div class="skill-node clickable-card" data-skill="azure" data-xp="3">
-          <div class="skill-icon">&#9729;</div>
-          <div class="skill-name">Azure &amp; Cloud</div>
-          <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
-          <div class="skill-level">Lv. <span>1</span></div>
-        </div>
-        <div class="skill-node clickable-card" data-skill="mlops" data-xp="3">
-          <div class="skill-icon">&#9881;</div>
-          <div class="skill-name">MLOps</div>
-          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
-          <div class="skill-level">Lv. <span>1</span></div>
-        </div>
-        <div class="skill-node clickable-card" data-skill="robotics" data-xp="3">
-          <div class="skill-icon">&#128640;</div>
-          <div class="skill-name">ROS 2 / UAV</div>
-          <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
-          <div class="skill-level">Lv. <span>1</span></div>
-        </div>
-        <div class="skill-node clickable-card" data-skill="powerplatform" data-xp="3">
-          <div class="skill-icon">&#9889;</div>
-          <div class="skill-name">Power Platform</div>
-          <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
-          <div class="skill-level">Lv. <span>1</span></div>
-        </div>
-        <div class="skill-node clickable-card" data-skill="analytics" data-xp="3">
-          <div class="skill-icon">&#128276;</div>
-          <div class="skill-name">DOMO / Analytics</div>
-          <div class="skill-bar"><div class="skill-fill" data-level="84"></div></div>
-          <div class="skill-level">Lv. <span>1</span></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: EDUCATION ===== -->
+  <section id="education" class="section">
+    <div class="section-container">
+      <h2 class="section-title reveal-up">Education</h2>
+      <p class="section-subtitle reveal-up">Academic background</p>
+      <div class="edu-grid">
+        <div class="edu-card reveal-up">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-info">
+            <h3>B.S. Computer Science &amp; Engineering</h3>
+            <p class="edu-school">University of Toledo — Toledo, OH</p>
+            <p class="edu-date">Expected May 2026</p>
+            <p class="edu-detail">Focused on AI/ML, data engineering, and autonomous systems. Active in ACM student chapter.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SECTION 4: PROJECTS ===== -->
-  <section id="projects" class="section" data-xp="25">
+  <!-- ===== SECTION: CERTIFICATIONS ===== -->
+  <section id="certifications" class="section">
     <div class="section-container">
-      <h2 class="section-title reveal-up">Quest Log</h2>
-      <p class="section-subtitle reveal-up">Completed missions &amp; ongoing research</p>
+      <h2 class="section-title reveal-up">Certifications &amp; Awards</h2>
+      <p class="section-subtitle reveal-up">Credentials and recognition</p>
+      <div class="cert-grid reveal-up">
+        <div class="cert-card">
+          <div class="cert-icon">☁️</div>
+          <div class="cert-info">
+            <h4>Add Your Certification</h4>
+            <p>Issuing Organization · Year</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon">🏆</div>
+          <div class="cert-info">
+            <h4>Add An Award</h4>
+            <p>Organization · Year</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="section-container">
+      <h2 class="section-title reveal-up">Projects</h2>
+      <p class="section-subtitle reveal-up">Selected work &amp; research</p>
       <div class="projects-grid">
-        <div class="project-card reveal-up clickable-card" data-xp="5">
-          <div class="project-status">&#9989; COMPLETED</div>
+        <div class="project-card reveal-up">
+          <div class="project-status">Completed</div>
           <div class="project-image">
             <div class="project-placeholder">&#128200;</div>
           </div>
@@ -191,11 +230,14 @@
             <div class="project-tech">
               <span>XGBoost</span><span>Airflow</span><span>MLflow</span><span>AWS S3</span>
             </div>
-            <div class="project-xp-reward">+100 XP</div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">GitHub ↗</a>
+              <a href="#" target="_blank" class="project-link project-link-secondary">Details ↗</a>
+            </div>
           </div>
         </div>
-        <div class="project-card reveal-up clickable-card" data-xp="5">
-          <div class="project-status">&#9989; COMPLETED</div>
+        <div class="project-card reveal-up">
+          <div class="project-status">Completed</div>
           <div class="project-image">
             <div class="project-placeholder">&#128761;</div>
           </div>
@@ -205,11 +247,14 @@
             <div class="project-tech">
               <span>PyTorch</span><span>ROS 2</span><span>MAML</span><span>YOLO11</span><span>NVIDIA Jetson</span>
             </div>
-            <div class="project-xp-reward">+150 XP</div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">GitHub ↗</a>
+              <a href="#" target="_blank" class="project-link project-link-secondary">Details ↗</a>
+            </div>
           </div>
         </div>
-        <div class="project-card reveal-up clickable-card" data-xp="5">
-          <div class="project-status">&#128296; IN REVIEW</div>
+        <div class="project-card reveal-up">
+          <div class="project-status">In Review</div>
           <div class="project-image">
             <div class="project-placeholder">&#128218;</div>
           </div>
@@ -219,11 +264,14 @@
             <div class="project-tech">
               <span>AI Safety</span><span>ACM CSUR</span><span>Research</span>
             </div>
-            <div class="project-xp-reward">+200 XP</div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">GitHub ↗</a>
+              <a href="#" target="_blank" class="project-link project-link-secondary">Details ↗</a>
+            </div>
           </div>
         </div>
-        <div class="project-card reveal-up clickable-card" data-xp="5">
-          <div class="project-status">&#9889; ACTIVE</div>
+        <div class="project-card reveal-up">
+          <div class="project-status">Active</div>
           <div class="project-image">
             <div class="project-placeholder">&#127944;</div>
           </div>
@@ -233,15 +281,100 @@
             <div class="project-tech">
               <span>Python</span><span>scikit-learn</span><span>DOMO</span><span>Beast Mode</span>
             </div>
-            <div class="project-xp-reward">+75 XP</div>
+            <div class="project-links">
+              <a href="#" target="_blank" class="project-link">GitHub ↗</a>
+              <a href="#" target="_blank" class="project-link project-link-secondary">Details ↗</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SECTION 5: CONTACT ===== -->
-  <section id="contact" class="section" data-xp="15">
+  <!-- ===== SECTION: RESEARCH ===== -->
+  <section id="research" class="section">
+    <div class="section-container">
+      <h2 class="section-title reveal-up">Research &amp; Publications</h2>
+      <p class="section-subtitle reveal-up">Academic contributions</p>
+      <div class="research-list">
+
+        <div class="research-card reveal-up">
+          <div class="research-header">
+            <div class="research-badge">In Review</div>
+            <span class="research-venue">ACM Computing Surveys (CSUR)</span>
+          </div>
+          <h3 class="research-title">Autonomous AI System Failures: A Systematic Survey and Taxonomy</h3>
+          <p class="research-abstract">
+            Systematic survey of 37 documented autonomous AI system failures across 74 sources.
+            Developed the <strong>4-Pillars Taxonomy</strong> for classifying failure modes (perception,
+            planning, actuation, and oversight) and introduced the <strong>Contested-Environment
+            Amplifier Model (CEAM)</strong> for reasoning about compounding failure conditions
+            in real-world deployment.
+          </p>
+          <div class="research-tags">
+            <span>AI Safety</span><span>Autonomous Systems</span><span>Failure Analysis</span><span>Survey</span>
+          </div>
+          <div class="research-links">
+            <a href="#" class="project-link">Preprint ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: SKILLS ===== -->
+  <section id="skills" class="section">
+    <div class="section-container">
+      <h2 class="section-title reveal-up">Skills</h2>
+      <p class="section-subtitle reveal-up">Technologies &amp; tools I work with</p>
+      <div class="skills-grid">
+        <div class="skill-node" data-skill="python">
+          <div class="skill-icon">&#128013;</div>
+          <div class="skill-name">Python</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+        </div>
+        <div class="skill-node" data-skill="ml">
+          <div class="skill-icon">&#129504;</div>
+          <div class="skill-name">ML / AI</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+        </div>
+        <div class="skill-node" data-skill="sql">
+          <div class="skill-icon">&#128202;</div>
+          <div class="skill-name">SQL &amp; Databases</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+        </div>
+        <div class="skill-node" data-skill="azure">
+          <div class="skill-icon">&#9729;</div>
+          <div class="skill-name">Azure &amp; Cloud</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="82"></div></div>
+        </div>
+        <div class="skill-node" data-skill="mlops">
+          <div class="skill-icon">&#9881;</div>
+          <div class="skill-name">MLOps</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+        </div>
+        <div class="skill-node" data-skill="robotics">
+          <div class="skill-icon">&#128640;</div>
+          <div class="skill-name">ROS 2 / UAV</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
+        </div>
+        <div class="skill-node" data-skill="powerplatform">
+          <div class="skill-icon">&#9889;</div>
+          <div class="skill-name">Power Platform</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+        </div>
+        <div class="skill-node" data-skill="analytics">
+          <div class="skill-icon">&#128276;</div>
+          <div class="skill-name">DOMO / Analytics</div>
+          <div class="skill-bar"><div class="skill-fill" data-level="84"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION: CONTACT ===== -->
+  <section id="contact" class="section">
     <div class="section-container">
       <h2 class="section-title reveal-up">Send a Message</h2>
       <p class="section-subtitle reveal-up">Reach out — always open to collaborate or connect!</p>
@@ -261,13 +394,12 @@
           </div>
           <button type="submit" class="btn btn-primary submit-btn">
             <span>Send Message</span>
-            <span class="btn-xp">+25 XP</span>
           </button>
         </form>
         <div class="contact-links">
-          <a href="https://github.com/aahmadf123" target="_blank" class="social-link clickable-card" data-xp="2">GitHub</a>
-          <a href="https://www.linkedin.com/in/ahmadfirasazfar" target="_blank" class="social-link clickable-card" data-xp="2">LinkedIn</a>
-          <a href="mailto:firas.azfar@gmail.com" class="social-link clickable-card" data-xp="2">Email</a>
+          <a href="https://github.com/aahmadf123" target="_blank" class="social-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/ahmadfirasazfar" target="_blank" class="social-link">LinkedIn</a>
+          <a href="mailto:firas.azfar@gmail.com" class="social-link">Email</a>
         </div>
       </div>
     </div>
@@ -276,7 +408,6 @@
   <!-- Footer -->
   <footer>
     <p>Built with <span class="heart">&#9829;</span> and way too much coffee — Ahmad Firas, Toledo OH</p>
-    <p class="footer-stats">Total XP earned this session: <span id="footer-xp">0</span></p>
   </footer>
 
   <script src="script.js"></script>
